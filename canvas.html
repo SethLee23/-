@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>我的画板</title>
+  <script src="//at.alicdn.com/t/font_1102593_11txo8qf1jhk.js"></script>
+  
+  <link rel=stylesheet href="canvas.css" type="text/css">
+  <link rel="icon" href="canvas.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<div class="actions" id = "actions">
+    <svg class="icon" id="eraser">
+        <use xlink:href="#icon-xiangpi"></use>
+    </svg>
+    <svg class="icon active" id="brush">
+        <use xlink:href="#icon-icon-test"></use>
+    </svg>
+    <svg class="icon" id="clear">
+        <use xlink:href="#icon-clear_away"></use>
+    </svg>
+    <svg class="icon" id="leftarrow">
+        <use xlink:href="#icon-47"></use>
+    </svg>
+    <svg class="icon" id="rightarrow">
+        <use xlink:href="#icon-48"></use>
+    </svg>
+    <svg class="icon" id="download">
+        <use xlink:href="#icon-xiazaibaocun"></use>
+    </svg>
+  </div>
+<ol class="colors">
+  <li id="red" class="red active"></li>
+  <li id="blue" class="blue"></li>
+  <li id="green" class="green"></li> 
+</ol>
+<ol class="size">
+  <li id="light" class="light"></li>
+  <li id="bold" class="bold"></li>
+  <li id="bolder" class="bolder"></li>
+</ol>
+<script src="canvas.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+ul,ol{
+  list-style: none;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+#canvas{
+  background-color:pink;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+/*禁用滚动条*/
+body{
+  overflow: hidden;
+}
+.actions{
+  position: fixed;
+  top:0;
+  left: 0;
+  padding: 10px;
+}
+
+.actions > svg{
+  /*动态效果改变一般添加transition功能*/
+  width: 2em;
+  height: 2em;
+  transition: all 0.3s;
+  margin: 5px;
+}
+.actions > svg.active{
+  /*svg添加颜色，改变大小,*/
+  fill: blue;
+  transform: scale(1.2);
+}
+.colors{
+  position: fixed;
+  top: 60px;
+  left: 15px;
+}
+.colors > li{
+  height: 20px;
+  width: 20px;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.15);
+  margin: 10px 0;
+  border-radius: 50%;
+}
+.colors > li.blue{
+  background-color: blue;
+}
+.colors > li.green{
+  background-color: green;
+}
+.colors > li.red{
+  background-color: red;
+}
+.colors > li.active{
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.4);
+}
+.size{
+  position: fixed;
+  top: 180px;
+  left: 15px;
+}
+.size > li{
+  height: 0px;
+  width: 10px;
+  padding: 10px;
+}
+.size >li.light{
+  border-top: 3px solid black;
+}
+.size > li.bold{
+  border-top: 6px solid black;
+}
+.size > li.bolder{
+  border-top: 8px solid black; 
+}
