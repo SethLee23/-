@@ -1,9 +1,7 @@
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d')
-document.onclick = function(){
-context.fillStyle = 'pink'
-context.fillRect(0,0,canvas.width,canvas.height)
-}
+
+
 autoSetCanvasSize(canvas)
 listenToUser(canvas)
 
