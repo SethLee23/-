@@ -1,10 +1,20 @@
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d')
-
+var undo = document.getElementById('undo');
+var historyDeta = [];
 
 autoSetCanvasSize(canvas)
 listenToUser(canvas)
 
+function saveData (data) {
+  (historyDeta.length === 10) && (historyDeta.shift()); // 上限为储存10步，数组的第一个删除
+  historyDeta.push(data);
+}
+undo.onclick = function(a){
+  if(historyDeta.length < 1) return false;
+  context.putImageData(historyDeta[historyDeta.length - 1], 0, 0);
+  historyDeta.pop();
+}
 var lineWidth = 3
 var strokeStyle = "black"
 light.onclick =function(){
@@ -70,11 +80,14 @@ download.onclick = function(){
 
 function createLine(x1,y1,x2,y2){
 context.beginPath();
+context.lineCap = "round";
+context.lineJoin = "round";
 //context.strokeStyle = 'black'
 context.lineWidth = lineWidth
 context.moveTo(x1,y1)
 context.lineTo(x2,y2)
 context.stroke();
+context.closePath();
 }
 
 function createCircle(x,y,radius){
@@ -97,6 +110,9 @@ function autoSetCanvasSize(canvas){
 }
 }
 
+ 
+
+
 function listenToUser(){
   var using = false
   var lastPoint = {x: undefined, y: undefined}
@@ -104,6 +120,8 @@ function listenToUser(){
   if(document.body.ontouchstart !== undefined){
   //触屏设备
   canvas.ontouchstart = function(a){
+    this.firstDot = context.getImageData(0, 0, canvas.width, canvas.height);
+    saveData(this.firstDot);
    var x = a.touches['0'].clientX
    var y = a.touches['0'].clientY
    console.log(a)
@@ -140,6 +158,8 @@ canvas.onmousedown = function(a){
   var x = a.clientX
   var y = a.clientY
   using = true
+  this.firstDot = context.getImageData(0, 0, canvas.width, canvas.height);//在这里储存绘图表面
+  saveData(this.firstDot);
   if(eraserEnabled){
     context.clearRect(x-5,y-5,10,10)//因为清除是个正方形，为了保证中心
   }else{
