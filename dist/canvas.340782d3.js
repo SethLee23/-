@@ -301,7 +301,7 @@ function listenToUser() {
       }
 
       if (eraserEnabled) {
-        context.clearRect(x - 5, y - 5, 10, 10);
+        context.clearRect(x - 10, y - 10, 20, 20);
       } else {
         //createCircle(x,y,2)
         var newPoint = {
@@ -406,7 +406,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53788" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60777" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

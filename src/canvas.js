@@ -174,7 +174,7 @@ function listenToUser() {
         return
       }
       if (eraserEnabled) {
-        context.clearRect(x - 5, y - 5, 10, 10)
+        context.clearRect(x - 10, y - 10, 20, 20)
       } else {
         //createCircle(x,y,2)
         var newPoint = {
