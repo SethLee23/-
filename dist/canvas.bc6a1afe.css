@@ -1,0 +1,148 @@
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#canvas {
+  background-color: pink;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/*禁用滚动条*/
+body {
+  overflow: hidden;
+}
+
+.actions {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.actions>svg {
+  /*动态效果改变一般添加transition功能*/
+  width: 2em;
+  height: 2em;
+  transition: all 0.3s;
+  margin: 5px;
+  border-radius: 10%;
+  padding: 8px;
+  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+}
+
+.actions>svg.active {
+  /*svg添加颜色，改变大小,*/
+  fill: aqua;
+  transform: scale(1.2);
+}
+
+.colors>li {
+  height: 20px;
+  width: 20px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15);
+  margin: 10px 10px 10px 0;
+  border-radius: 50%;
+}
+
+.colors {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  /* left: 15px; */
+  justify-content: center;
+  align-items: center;
+}
+
+#range-wrap {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  width: 30px;
+  height: 150px;
+  margin-top: -75px;
+}
+
+#range-wrap input {
+  transform: rotate(-90deg);
+  width: 150px;
+  margin: 0;
+  transform-origin: 75px 75px;
+  border-radius: 15px;
+  -webkit-appearance: none;
+  outline: none;
+  position: relative;
+}
+
+#range-wrap input::after {
+  display: block;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-right: 150px solid #00CCFF;
+  border-left-width: 0;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  border-radius: 15px;
+  z-index: 0;
+}
+
+#range-wrap input[type=range]::-webkit-slider-thumb,
+#range-wrap input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+}
+
+#range-wrap input[type=range]::-webkit-slider-runnable-track {
+  background: pink;
+}
+#range-wrap input[type=range]::-webkit-slider-runnable-track,
+#range-wrap input[type=range]::-moz-range-track {
+  height: 10px;
+  border-radius: 10px;
+  box-shadow: none;
+ 
+}
+
+#range-wrap input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  margin-top: -1px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00CCFF;
+  position: relative;
+  z-index: 999;
+}
+
+
+.colors > li.active{
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.4);
+  transform: scale(1.2);
+}
+
+/*# sourceMappingURL=/canvas.bc6a1afe.css.map */
